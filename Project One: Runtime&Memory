@@ -1,0 +1,319 @@
+ 
+Vector 
+
+Line Cost 
+
+# Times Executes 
+
+Total Cost 
+
+Initialize course structure struct 
+
+1 
+
+1 
+
+1 
+
+Loop to read rows of a CSV file 
+
+1 
+
+n 
+
+n 
+
+Create Data structure and add to the collection of courses 
+
+1 
+
+n 
+
+n 
+
+While not at the end of the line 
+
+1 
+
+n 
+
+n 
+
+Add prerequisite 
+
+1 
+
+n 
+
+n 
+
+Push the course back to the end 
+
+1 
+
+n 
+
+n 
+
+Total Cost 
+
+5n + 1 
+
+Runtime 
+
+0(n) 
+
+ 
+
+ 
+
+Hash Table 
+
+Line Cost 
+
+# Times Executes 
+
+Total Cost 
+
+Create Hash table 
+
+1 
+
+1 
+
+1 
+
+Create an insert method 
+
+0 
+
+0 
+
+0 
+
+Retrieve node using key 
+
+1 
+
+n 
+
+n 
+
+If no entry is found for the key 
+
+1 
+
+n 
+
+n 
+
+Assign this node to the key position 
+
+1 
+
+n 
+
+n 
+
+Else if node is not used 
+
+1 
+
+n 
+
+n 
+
+Assign old node key to UNIT_MAX, set to key, set old node to course and old node next to null pointer 
+
+4 
+
+n 
+
+4n 
+
+Else find the next open node 
+
+1 
+
+n 
+
+n 
+
+Add new newNode to end 
+
+1 
+
+n 
+
+n 
+
+For each new line in file 
+
+1 
+
+n 
+
+n 
+
+Create Data structure and add to the collection of courses 
+
+1 
+
+n 
+
+n 
+
+While not at the end of the line 
+
+1 
+
+n 
+
+n 
+
+Add prerequisite 
+
+1 
+
+n 
+
+n 
+
+Push the course back to the end 
+
+1 
+
+n 
+
+n 
+
+Total Cost 
+
+15n + 1 
+
+Runtime 
+
+0(n) 
+
+ 
+
+Tree 
+
+Line Cost 
+
+# Times Executes 
+
+Total Cost 
+
+Create Binary Code Tree 
+
+1 
+
+1 
+
+1 
+
+Create add node method 
+
+0 
+
+0 
+
+0 
+
+If node is larger than add to left 
+
+1 
+
+n 
+
+n 
+
+If no left node 
+
+1 
+
+n 
+
+n 
+
+This node becomes left 
+
+1 
+
+n 
+
+n 
+
+Else recurse down the left node 
+
+1 
+
+n 
+
+n 
+
+Else if no right node 
+
+1 
+
+n 
+
+n 
+
+This node becomes right 
+
+1 
+
+n 
+
+n 
+
+For each new line in file 
+
+1 
+
+n 
+
+n 
+
+Create Data structure and add to the collection of courses 
+
+1 
+
+n 
+
+n 
+
+While not at the end of the line 
+
+1 
+
+n 
+
+n 
+
+Add prerequisite 
+
+1 
+
+n 
+
+n 
+
+Push the course back to the end 
+
+1 
+
+n 
+
+n 
+
+Total Cost 
+
+11n + 1 
+
+Runtime 
+
+0(n) 
+
