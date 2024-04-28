@@ -1,0 +1,88 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+// Identifiers for course code
+struct Course {
+    string courseID;
+    string courseTitle;
+    vector<string> preRequisite;
+};
+
+vector<Course> courses;
+
+// This code helps display the courses using sort once they are called on in the loadCourses structure
+void displayCourses() {
+
+    sort(courses.begin(), courses.end(), [](const Course& x, const Course& y) {
+
+        return x.courseID < y.courseID;
+        });
+
+    cout << "Here is a sample schedule: " << endl;
+
+    for (const auto& course : courses) {
+
+        cout << course.courseID << ",  " << course.courseTitle << endl;
+    }
+}
+
+// Reads the course file found within the location, and then asks the user what is the name
+void loadCourses(const string& fileName) {
+
+    ifstream file(fileName);
+
+    // if the file name is correct, it opens
+    if (file.is_open()) {
+
+        cout << "The file is found! " << fileName << endl;
+    }
+    else {
+        
+        // if the file name is incorrect, it prints an error
+        cout << "The file was not found! " << fileName << endl;
+
+        return;
+    }
+
+ // Finds the data needed and uploads it inside the file (courseID, courseTitle)
+    string line;
+    while (getline(file, line)) {
+
+        Course course;
+
+        size_t pos = line.find(",");
+
+        course.courseID = line.substr(0, pos);
+
+        line.erase(0, pos + 1);
+
+        pos = line.find(",");
+
+        course.courseTitle = line.substr(0, pos);
+
+        line.erase(0, pos + 1);
+
+        // while not at the end of the line, finds preRequisite and uploads it inside file
+        while (!line.empty()) {
+
+            pos = line.find(",");
+
+            string preRequisite = line.substr(0, pos);
+
+            course.preRequisite.push_back(preRequisite);
+
+            if (pos == string::npos) break;
+
+            line.erase(0, pos + 1);
+        }
+
+        courses.push_back(course);
+    }
+
+    file.close();
+}
