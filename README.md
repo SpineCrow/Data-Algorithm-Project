@@ -1,4 +1,4 @@
-# Module-Eight-Reflection
+# End of Class Reflection
 
 What was the problem you were solving in the projects for this course?
 
